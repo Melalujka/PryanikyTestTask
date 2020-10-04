@@ -9,11 +9,13 @@
 import UIKit
 
 protocol TestTableViewCell: UITableViewCell {
+    var name: String? { get }
     func configure(_ data: InfoType)
 }
 
 class TestTextTableViewCell: UITableViewCell, TestTableViewCell {
     
+    var name: String?
     lazy var textInfo: UILabel = UILabel()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -35,7 +37,8 @@ class TestTextTableViewCell: UITableViewCell, TestTableViewCell {
     }
 
     func configure(_ data: InfoType) {
-        guard case .text(title: let title) = data else { return }
+        guard case .text(name: let name, title: let title) = data else { return }
+        self.name = name
         textInfo.text = title
     }
     

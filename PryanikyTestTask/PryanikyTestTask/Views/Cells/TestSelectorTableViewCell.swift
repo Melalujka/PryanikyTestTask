@@ -10,6 +10,7 @@ import UIKit
 
 class TestSelectorTableViewCell: UITableViewCell, TestTableViewCell {
     
+    var name: String?
     var selector: [Variant]?
     var selectorId: Int?
     lazy var picker: UIPickerView = UIPickerView()
@@ -37,7 +38,8 @@ class TestSelectorTableViewCell: UITableViewCell, TestTableViewCell {
     }
     
     func configure(_ data: InfoType) {
-        guard case .selector(id: let id, variant: let variants) = data else { return }
+        guard case .selector(name: let name, id: let id, variant: let variants) = data else { return }
+        self.name = name
         selectorId = id
         selector = variants
         picker.selectRow(selectorId ?? 0, inComponent: 0, animated: false)

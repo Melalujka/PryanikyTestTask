@@ -50,13 +50,14 @@ final class TestViewController: UIViewController, TestView {
         view.addSubview(tableView!)
         
         tableView?.dataSource = self
+        tableView?.delegate = self
         tableView?.register(TestTextTableViewCell.self, forCellReuseIdentifier: TestTextTableViewCell.identifier)
         tableView?.register(TestPictureTableViewCell.self, forCellReuseIdentifier: TestPictureTableViewCell.identifier)
         tableView?.register(TestSelectorTableViewCell.self, forCellReuseIdentifier: TestSelectorTableViewCell.identifier)
     }
 }
 
-extension TestViewController: UITableViewDataSource {
+extension TestViewController: UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -80,5 +81,10 @@ extension TestViewController: UITableViewDataSource {
         cell?.configure(item)
         
         return cell ?? UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as? TestTableViewCell
+        showSimpleAlertView(message: cell?.name ?? "")
     }
 }

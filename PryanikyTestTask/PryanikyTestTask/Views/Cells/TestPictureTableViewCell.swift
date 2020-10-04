@@ -10,6 +10,7 @@ import UIKit
 
 class TestPictureTableViewCell: UITableViewCell, TestTableViewCell {
     
+    var name: String?
     lazy var picture: UIImageView = UIImageView()
     lazy var textInfo: UILabel = UILabel()
     var imageLoadManager: ImageLoadManager?
@@ -47,7 +48,8 @@ class TestPictureTableViewCell: UITableViewCell, TestTableViewCell {
     }
     
     func configure(_ data: InfoType) {
-        guard case .picture(title: let title, url: let urlString) = data else { return }
+        guard case .picture(name: let name, title: let title, url: let urlString) = data else { return }
+        self.name = name
         textInfo.text = title
         
         weak var weakImageView = picture

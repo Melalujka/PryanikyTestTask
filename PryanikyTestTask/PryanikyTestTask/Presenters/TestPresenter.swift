@@ -16,9 +16,9 @@ protocol Presenter {
 }
 
 enum InfoType {
-    case text(title: String)
-    case picture(title: String, url: String)
-    case selector(id: Int, variant: [Variant])
+    case text(name: String, title: String)
+    case picture(name: String, title: String, url: String)
+    case selector(name: String, id: Int, variant: [Variant])
 }
 
 final class TestPresenter: Presenter {
@@ -68,12 +68,12 @@ final class TestPresenter: Presenter {
         guard let cellData = types.first(where: { $0.name == name })?.data else { return nil }
         
         if let url = cellData.url {
-            return .picture(title: cellData.text ?? "", url: url)
+            return .picture(name: name, title: cellData.text ?? "", url: url)
         }
         if let id = cellData.selectedId,
            let variants = cellData.variants {
-              return .selector(id: id, variant: variants)
+            return .selector(name: name, id: id, variant: variants)
         }
-        return .text(title: cellData.text ?? "")
+        return .text(name: name, title: cellData.text ?? "")
     }
 }
