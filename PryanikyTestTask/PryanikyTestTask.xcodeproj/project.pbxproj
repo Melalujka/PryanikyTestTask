@@ -56,8 +56,6 @@
 		2A82166625250E3600F44D0D /* PryanikyTestTaskTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PryanikyTestTaskTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A82166A25250E3600F44D0D /* PryanikyTestTaskTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PryanikyTestTaskTests.swift; sourceTree = "<group>"; };
 		2A82166C25250E3600F44D0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2A82167525250E3600F44D0D /* PryanikyTestTaskUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PryanikyTestTaskUITests.swift; sourceTree = "<group>"; };
-		2A82167725250E3600F44D0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2AAE234F2525FC6500903B5F /* DataJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataJSON.swift; sourceTree = "<group>"; };
 		2AAE23512525FC7600903B5F /* Element.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Element.swift; sourceTree = "<group>"; };
 		2AAE23532525FC8C00903B5F /* Variant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Variant.swift; sourceTree = "<group>"; };
@@ -114,7 +112,6 @@
 			children = (
 				2A82165225250E3200F44D0D /* PryanikyTestTask */,
 				2A82166925250E3600F44D0D /* PryanikyTestTaskTests */,
-				2A82167425250E3600F44D0D /* PryanikyTestTaskUITests */,
 				2A82165125250E3200F44D0D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -152,15 +149,6 @@
 				2AD3DAF9252A487C003BC727 /* MockTestView.swift */,
 			);
 			path = PryanikyTestTaskTests;
-			sourceTree = "<group>";
-		};
-		2A82167425250E3600F44D0D /* PryanikyTestTaskUITests */ = {
-			isa = PBXGroup;
-			children = (
-				2A82167525250E3600F44D0D /* PryanikyTestTaskUITests.swift */,
-				2A82167725250E3600F44D0D /* Info.plist */,
-			);
-			path = PryanikyTestTaskUITests;
 			sourceTree = "<group>";
 		};
 		2AAE235D2526024F00903B5F /* Extensions */ = {
